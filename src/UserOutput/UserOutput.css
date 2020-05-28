@@ -1,12 +1,12 @@
 .container-output{
-    width: 60%;
+    width: 90%;
     margin: 20px;
 }
 
-p{
+.para{
     width: inherit;
     border: 1px solid black;
     display: block;
     padding: 10px 10px;
-    height: 100px;
+    height: 50px;
 }

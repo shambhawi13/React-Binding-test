@@ -1,0 +1,13 @@
+.container{
+  border: 1px solid gray;
+  margin: 10px;
+  width: 50%;
+}
+
+.user-input{
+  margin-left: 20px;
+}
+
+.inline{
+  display: inline;
+}

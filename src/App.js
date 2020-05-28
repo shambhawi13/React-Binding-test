@@ -3,12 +3,15 @@ import './App.css';
 import './UserInput/UserInput.css'
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
-
+import ValidationComponent from './ValidationComponent/ValidationComponent';
+import CharComponent from './CharComponent/CharComponent';
 
 function App() {
   const [state, setstate] = useState({
     username : 'Shambhawi'
   })
+
+  const [userInput, setUserInput] = useState('');
 
   let setUserHandler = (event)=>{
     setstate({
@@ -16,11 +19,42 @@ function App() {
     })
   };
 
+  let calcLengthHandler = (event)=>{
+    setUserInput(event.target.value);
+  }
+
+  const deleteCharCmp = (index)=>{
+    console.log(index);
+  }
+
+  let charArr = [...userInput.split('')];
+  let charCmp = ( <div>
+        {
+          charArr.map((character,index)=>{
+            return (
+              <CharComponent 
+              onClick={()=>{deleteCharCmp(index)}} 
+              char={character} 
+              key='index'></CharComponent>
+            )
+          })
+        }
+    </div>)
+
   return (
     <div className="App">
-      <h1 className='container-output'>Apply Binding</h1>
-      <UserInput changeUser={setUserHandler} value={state.username}></UserInput>
-      <UserOutput username={state.username}></UserOutput>
+      <div className='container'>
+        <h1 className='container-output'>Apply Binding</h1>
+        <UserInput changeUser={setUserHandler} value={state.username}></UserInput>
+        <UserOutput username={state.username}></UserOutput>
+      </div>
+      <div className='container'>
+        <h1 className='container-output'>Dynamic List</h1>
+        <input type='text' className='user-input' onChange={calcLengthHandler} value={userInput} placeholder='Enter user input'></input>
+        <p className='container-output inline'>Length of user input: {userInput.length}</p>
+        <ValidationComponent length={userInput.length}></ValidationComponent>
+        {charCmp}
+      </div>
     </div>
   );
 }

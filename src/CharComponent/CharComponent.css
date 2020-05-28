@@ -1,0 +1,8 @@
+.char-container{
+    display: inline-block;
+    padding: 16px;
+    text-align: center;
+    margin: 20px;
+    border: 1px solid black;
+    width: 90%;
+}

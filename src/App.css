@@ -11,3 +11,10 @@
 .inline{
   display: inline;
 }
+
+.delete{
+  color: red;
+  font-size: 10px;
+  display: inline;
+  margin-left: 20px;
+}

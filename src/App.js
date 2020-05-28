@@ -31,6 +31,7 @@ function App() {
 
   let charArr = [...userInput.split('')];
   let charCmp = ( <div>
+        { userInput.length? <label className='delete'>Click on character box to delete character</label> : null}
         {
           charArr.map((character,index)=>{
             return (

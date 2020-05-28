@@ -24,7 +24,9 @@ function App() {
   }
 
   const deleteCharCmp = (index)=>{
-    console.log(index);
+    const input = [...userInput.split('')];
+    input.splice(index,1);
+    setUserInput(input.join(''));
   }
 
   let charArr = [...userInput.split('')];
@@ -33,9 +35,9 @@ function App() {
           charArr.map((character,index)=>{
             return (
               <CharComponent 
-              onClick={()=>{deleteCharCmp(index)}} 
+              click={deleteCharCmp.bind(this,index)} 
               char={character} 
-              key='index'></CharComponent>
+              key={index}></CharComponent>
             )
           })
         }

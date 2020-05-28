@@ -1,0 +1,12 @@
+.container-output{
+    width: 60%;
+    margin: 20px;
+}
+
+p{
+    width: inherit;
+    border: 1px solid black;
+    display: block;
+    padding: 10px 10px;
+    height: 100px;
+}

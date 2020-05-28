@@ -1,0 +1,9 @@
+.container-output{
+    width: 60%;
+    margin: 20px;
+}
+
+label{
+    color: red;
+    font-size: 12px;
+}

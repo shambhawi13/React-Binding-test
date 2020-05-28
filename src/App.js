@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import './UserInput/UserInput.css'
+import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
+
 
 function App() {
+  const [state, setstate] = useState({
+    username : 'Shambhawi'
+  })
+
+  let setUserHandler = (event)=>{
+    setstate({
+      username: event.target.value
+    })
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 className='container-output'>Apply Binding</h1>
+      <UserInput changeUser={setUserHandler} value={state.username}></UserInput>
+      <UserOutput username={state.username}></UserOutput>
     </div>
   );
 }

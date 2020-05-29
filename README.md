@@ -2,6 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 The project involves usage of CSS Module and all concepts of React application live using different use cases. Some of concepts are :
 - JSX
 - Stateful and Stateless component
+- useState Hook
 - Functional and class-based component
 - Binding
 - Two-way data binding

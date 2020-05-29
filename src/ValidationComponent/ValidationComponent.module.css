@@ -1,0 +1,16 @@
+.desc{
+    margin-left: 20px;
+    font-size: 12px;
+}
+
+.inline{
+    display: inline;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import './App.css';
-import './UserInput/UserInput.css'
+import classes from './App.module.css';
 import UserInput from './UserInput/UserInput';
 import UserOutput from './UserOutput/UserOutput';
 import ValidationComponent from './ValidationComponent/ValidationComponent';
@@ -31,7 +30,7 @@ function App() {
 
   let charArr = [...userInput.split('')];
   let charCmp = ( <div>
-        { userInput.length? <label className='delete'>Click on character box to delete character</label> : null}
+        { userInput.length? <label className={classes.delete}>Click on character box to delete character</label> : null}
         {
           charArr.map((character,index)=>{
             return (
@@ -46,15 +45,15 @@ function App() {
 
   return (
     <div className="App">
-      <div className='container'>
-        <h1 className='container-output'>Apply Binding</h1>
+      <div className={classes.container}>
+        <h1 className={classes.containerOutput}>Apply Binding</h1>
         <UserInput changeUser={setUserHandler} value={state.username}></UserInput>
         <UserOutput username={state.username}></UserOutput>
       </div>
-      <div className='container'>
-        <h1 className='container-output'>Dynamic List</h1>
-        <input type='text' className='user-input' onChange={calcLengthHandler} value={userInput} placeholder='Enter user input'></input>
-        <p className='container-output inline'>Length of user input: {userInput.length}</p>
+      <div className={classes.container}>
+        <h1 className={classes.containerOutput}>Dynamic List</h1>
+        <input type='text' className={classes.userInput} onChange={calcLengthHandler} value={userInput} placeholder='Enter user input'></input>
+        <p className={`${classes.containerOutput} ${classes.inline}`}>Length of user input: {userInput.length}</p>
         <ValidationComponent length={userInput.length}></ValidationComponent>
         {charCmp}
       </div>

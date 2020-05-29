@@ -1,11 +1,11 @@
 import React from 'react';
-import './UserOutput.css';
+import classes from './UserOutput.module.css';
 
 const UserInput = (props)=>{
     return(
-        <div className='container-output'>
-            <p className='para'>User Input : {props.username}</p>
-            <p className='para'>User Input : {props.username}</p>
+        <div className={classes.containerOutput}>
+            <p className={classes.para}>User Input : {props.username}</p>
+            <p className={classes.para}>User Input : {props.username}</p>
         </div>
     )
 }
